@@ -1,0 +1,41 @@
+{
+  "name": "MTR Connection Monitor",
+  "version": "1.0.0",
+  "slug": "mtr-monitor",
+  "description": "Monitor internet connection health using MTR (My Traceroute)",
+  "url": "https://github.com/housemaister/mtr-monitor-addon",
+  "startup": "services",
+  "boot": "auto",
+  "ports": {
+    "8099/tcp": {
+      "description": "MTR Monitor API",
+      "protocol": "http"
+    }
+  },
+  "options": {
+    "target_host": "8.8.8.8",
+    "ping_interval": 300,
+    "mtr_count": 10,
+    "mqtt_enabled": true,
+    "mqtt_broker": "core-mosquitto",
+    "mqtt_prefix": "homeassistant/sensor/mtr",
+    "log_level": "info"
+  },
+  "schema": {
+    "target_host": "str",
+    "ping_interval": "int(60,3600)",
+    "mtr_count": "int(5,20)",
+    "mqtt_enabled": "bool",
+    "mqtt_broker": "str",
+    "mqtt_prefix": "str",
+    "log_level": "list(debug|info|warning|error)"
+  },
+  "services": ["mqtt"],
+  "homeassistant_api": true,
+  "full_access": true,
+  "docker_api": false,
+  "privileged": [],
+  "environment": {
+    "TZ": "UTC"
+  }
+}

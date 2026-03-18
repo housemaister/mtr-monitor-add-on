@@ -1,0 +1,5 @@
+#!/bin/bash
+
+exec s6-svcan-listen -- s6-rc-service-up -- mtr-monitor
+exec 2>&1
+exec /usr/local/bin/mtr-monitor.sh
