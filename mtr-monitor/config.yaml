@@ -1,20 +1,29 @@
-# MTR Monitor Configuration
-
-# Monitoring settings
-monitor:
-  interval: 5min
-  timeout: 1s
-
-# Alert settings
-alerts:
-  email:
-    enabled: true
-    recipients:
-      - alerts@example.com
-  webhook:
-    enabled: false
-  logging:
-    level: info
-    file: mtr_monitor.log
-
-# Additional parameters can be added below.
+name: MTR Connection Monitor
+version: "1.0.0"
+slug: mtr-monitor
+description: Monitor internet connection health using MTR
+url: "https://github.com/housemaister/mtr-monitor-addon/tree/main/mtr-monitor"
+arch:
+  - aarch64
+  - amd64
+init: false
+map:
+  - share:rw
+ports:
+  8099/tcp: null
+homeassistant_api: true
+options:
+  target_host: "8.8.8.8"
+  ping_interval: 300
+  mtr_count: 10
+  mqtt_enabled: true
+  mqtt_broker: "core-mosquitto"
+  mqtt_prefix: "homeassistant/sensor/mtr"
+schema:
+  target_host: str
+  ping_interval: int(60,3600)
+  mtr_count: int(5,20)
+  mqtt_enabled: bool
+  mqtt_broker: str
+  mqtt_prefix: str
+image: "ghcr.io/housemaister/{arch}-addon-mtr-monitor"

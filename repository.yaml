@@ -4,6 +4,8 @@
 
 name: MTR Connection Monitor
 version: 1.0.0
+url: 'https://github.com/housemaister/mtr-monitor-addon'
+maintainer: housemaister
 settings:
   monitoringInterval: 10
   maxRetries: 3
