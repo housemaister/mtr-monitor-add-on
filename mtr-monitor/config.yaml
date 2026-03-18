@@ -1,7 +1,8 @@
+# https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: MTR Connection Monitor
 version: "1.0.0"
 slug: mtr-monitor
-description: Monitor internet connection health using MTR
+description: Monitor internet connection health using MTR (My Traceroute)
 url: "https://github.com/housemaister/mtr-monitor-addon/tree/main/mtr-monitor"
 arch:
   - aarch64
@@ -9,9 +10,6 @@ arch:
 init: false
 map:
   - share:rw
-ports:
-  8099/tcp: null
-homeassistant_api: true
 options:
   target_host: "8.8.8.8"
   ping_interval: 300
@@ -19,6 +17,7 @@ options:
   mqtt_enabled: true
   mqtt_broker: "core-mosquitto"
   mqtt_prefix: "homeassistant/sensor/mtr"
+  log_level: "info"
 schema:
   target_host: str
   ping_interval: int(60,3600)
@@ -26,4 +25,5 @@ schema:
   mqtt_enabled: bool
   mqtt_broker: str
   mqtt_prefix: str
+  log_level: list(debug|info|warning|error)
 image: "ghcr.io/housemaister/{arch}-addon-mtr-monitor"
