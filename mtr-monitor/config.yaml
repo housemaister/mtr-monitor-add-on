@@ -1,0 +1,20 @@
+# MTR Monitor Configuration
+
+# Monitoring settings
+monitor:
+  interval: 5min
+  timeout: 1s
+
+# Alert settings
+alerts:
+  email:
+    enabled: true
+    recipients:
+      - alerts@example.com
+  webhook:
+    enabled: false
+  logging:
+    level: info
+    file: mtr_monitor.log
+
+# Additional parameters can be added below.
