@@ -2,7 +2,7 @@
 name: MTR Connection Monitor
 version: "1.0.0"
 slug: mtr-monitor
-description: Monitor internet connection health using MTR (My Traceroute)
+description: Monitor internet connection health using MTR
 url: "https://github.com/housemaister/mtr-monitor-addon/tree/main/mtr-monitor"
 arch:
   - aarch64
