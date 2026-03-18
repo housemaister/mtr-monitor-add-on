@@ -27,6 +27,8 @@ This add-on runs periodic MTR diagnostics against a target host (default: Google
 4. Start the add-on
 5. Check the logs to verify it's working
 
+[![Open your Home Assistant instance and show the add add-on repository dialog with a specific repository URL pre-filled.](https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg)](https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fhousemaister%2Fmtr-monitor-add-on)
+
 ## Configuration
 
 ### Options
