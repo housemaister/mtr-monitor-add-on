@@ -1,0 +1,10 @@
+# MTR Connection Monitor Repository
+
+# Configuration for the MTR Connection Monitor
+
+name: MTR Connection Monitor
+version: 1.0.0
+settings:
+  monitoringInterval: 10
+  maxRetries: 3
+  timeout: 5000
